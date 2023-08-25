@@ -197,6 +197,9 @@ function healPlayerHandler(){
 }
 
 function printLogHandler(){
+    for(let i =0;i<3;i++){
+        
+    }
     console.log(battlelog);
 }
 
