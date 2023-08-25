@@ -205,8 +205,14 @@ function printLogHandler(){
     // }
     let i=0;
     for(const logEntry of battlelog){
-        console.log(logEntry);
-        console.log(1);
+        // console.log(logEntry);
+        // console.log(1);
+        // i++;
+        console.log(`#${i}`);
+        for(const key in logEntry){
+            // console.log(key);
+            console.log(key +' : '+logEntry[key]);//the name inside the [] has to be a string or a variable that holds the property name you want to access
+        }
         i++;
     }
 }
