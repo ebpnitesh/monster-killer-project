@@ -18,6 +18,7 @@ let chosenMaxLife = parseInt(enteredValue);
 
 //variable for the log
 let battlelog = [];
+let lastLoggedEntry;
 
 if(isNaN(chosenMaxLife) || chosenMaxLife <= 0){
     chosenMaxLife = 100;
@@ -211,6 +212,10 @@ function printLogHandler(){
         j++;
     }while(j<3);
 
+    /*
+    We can also use break to stop the loop execution
+    */
+
     // for(let i = 0; i<battlelog.length;i++){
     //     console.log(battlelog[i]);
     // }
@@ -219,10 +224,14 @@ function printLogHandler(){
         // console.log(logEntry);
         // console.log(1);
         // i++;
-        console.log(`#${i}`);
-        for(const key in logEntry){
-            // console.log(key);
-            console.log(key +' : '+logEntry[key]);//the name inside the [] has to be a string or a variable that holds the property name you want to access
+        if(!lastLoggedEntry && lastLoggedEntry !==0 || lastLoggedEntry < i){
+            console.log(`#${i}`);
+            for(const key in logEntry){
+                // console.log(key);
+                console.log(key +' : '+logEntry[key]);//the name inside the [] has to be a string or a variable that holds the property name you want to access
+            }
+            lastLoggedEntry = i;
+            break;//only output one iteration
         }
         i++;
     }
